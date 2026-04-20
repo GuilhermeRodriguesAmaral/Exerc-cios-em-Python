@@ -1,13 +1,38 @@
-print('Hello World')
+'''Calculadora com while'''
 
-name = 'guilherme'
-tamanho = len(name)
+while True:
+    numero_1 = input('Digite um numero: ')
+    numero_2 = input('Digite outro numero: ')
+    operador = input('Digite um operador [+, -, /, *]: ')
 
-curtos = 0
-while curtos < tamanho:
-    print(curtos)
-    curtos += 1
+    numeros_validos = None
 
-print('acabou')
+
+    #converter numero para float e validar para uso
+    try:
+        num_1_float = float(numero_1)
+        num_2_float = float(numero_2)
+        numeros_validos = True
+    except:
+        numeros_validos = None
+
+    if numeros_validos is None:
+        print('Um dos numeros nao estao validos')
+        continue
+
+
+    #Checar se o operador esta valido
+    operadores_validos = '+ - / *'
+
+    if operador not in operadores_validos:
+        print('Operador invalido')
+        continue
+
+
+    #Saida do codigo
+    sair = input('Quer sair? [s]im ').lower().startswith('s')
+
+    if sair is True:
+        break
 
 
