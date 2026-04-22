@@ -3,7 +3,7 @@
 while True:
     numero_1 = input('Digite um numero: ')
     numero_2 = input('Digite outro numero: ')
-    operador = input('Digite um operador [+, -, /, *]: ')
+    operador = input('Digite um operador [+ - / *]: ')
 
     numeros_validos = None
 
@@ -22,11 +22,27 @@ while True:
 
 
     #Checar se o operador esta valido
-    operadores_validos = '+ - / *'
+    operadores_validos = '+-/*'
 
     if operador not in operadores_validos:
         print('Operador invalido')
         continue
+
+    if len(operador) > 1:
+        print('Não pode mais que um operador')
+        continue
+
+    
+    #Fazendo a conta
+    print('Resultado Abaixo: ')
+    if operador == '+':
+        print( num_1_float + num_2_float )
+    elif operador == '-':
+        print( num_1_float - num_2_float )
+    elif operador == '*':
+        print( num_1_float * num_2_float )
+    elif operador == '/':
+        print( num_1_float / num_2_float )
 
 
     #Saida do codigo
